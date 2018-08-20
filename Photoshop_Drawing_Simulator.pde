@@ -47,6 +47,7 @@ void draw()
   pg.text("Press '<' or '>' to change the opacity!", 20,height-35);
   pg.text("Press 1,2 or 3 for different colours!", 20,height-20);
   pg.text("hover to reset! --->", 535, height-20);
+  pg.text("Press 's' to capture your artwork!", 500,20);
   pg.fill(127,127,127,50);
   pg.endDraw();
   image(pg, 0, 0, width, height);
@@ -102,6 +103,9 @@ void keyPressed()
   if (key == ',')
   {opacity = opacity - 10;}
   opacity = constrain(opacity,10,255);
+  if (key == 's') 
+  {saveFrame("Artwork-###.png");background(255);}
+  
   
   //Array Colour controls
   if (key == '1') colour_index = 0;
@@ -110,4 +114,4 @@ void keyPressed()
 
 } 
   
-  
+ 
